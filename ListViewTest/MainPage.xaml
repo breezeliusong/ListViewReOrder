@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="ListViewTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ListViewTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+    <local:MyViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <DataTemplate x:Name="MyListDataTemplate">
+            <Grid Height="100" Width="300" Background="Purple">
+                <TextBlock Text="{Binding Name}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView x:Name="MyList" 
+          AllowDrop="True" SelectionMode="Extended"
+          DragOver="ListView_DragOver" 
+          Drop="ListView_Drop_1" 
+          CanDragItems="True" 
+          CanReorderItems="True"
+          SelectionChanged="MyList_SelectionChanged"        
+          DragItemsStarting="ListView_DragItemsStarting"
+          ItemsSource="{Binding ListItems}" 
+          ItemTemplate="{StaticResource MyListDataTemplate}" 
+          Grid.Column="0" Grid.Row="1" />
+    </Grid>
+</Page>
