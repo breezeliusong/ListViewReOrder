@@ -15,6 +15,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+//http://blog.jerrynixon.com/2013/06/walkthrough-reordering-items-in.html
+//listview reorder blog
+
 namespace ListViewTest
 {
     /// <summary>
